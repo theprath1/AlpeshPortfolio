@@ -1,43 +1,88 @@
-# Astro Starter Kit: Minimal
+# Alpesh Patel - Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Personal portfolio website built with Astro, featuring a clean and modern design with dark mode support.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live:** [alpeshpatel.dev](https://alpeshpatel.dev)
 
-## 🚀 Project Structure
+## Tech Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Framework:** [Astro 5](https://astro.build)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com) + custom CSS variables
+- **Fonts:** DM Sans, Playfair Display, DM Mono (Google Fonts)
+- **Deployment:** Static site generation
+
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── config.ts                  # Site-wide constants (name, links, etc.)
+├── content/
+│   └── blog/                  # Markdown blog posts
+│       ├── hello.md
+│       ├── durable-data-platforms.md
+│       ├── cloud-decisions-for-platform-teams.md
+│       └── mentoring-through-technical-standards.md
+├── content.config.ts          # Astro content collection schema
+├── data/
+│   └── siteData.ts            # Structured data (experience, projects, skills, etc.)
+├── layouts/
+│   └── BaseLayout.astro       # Shared layout (nav, footer, head)
+├── pages/
+│   ├── index.astro            # Home
+│   ├── about.astro            # About
+│   ├── experience.astro       # Career timeline
+│   ├── projects.astro         # Project cards
+│   ├── skills.astro           # Skill categories
+│   ├── blog.astro             # Blog listing
+│   ├── blog/[id].astro        # Individual blog post
+│   └── contact.astro          # Contact info
+└── styles/
+    └── global.css             # Design system (colors, typography, components)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Pages
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Page | Description |
+| :--- | :---------- |
+| Home | Introduction, stats, highlights, featured projects, blog preview |
+| About | Profile, credentials, strengths, operating principles |
+| Experience | Alternating center-line career timeline |
+| Projects | 2-column card grid with tech tags |
+| Skills | Categorized skill chips |
+| Blog | Markdown-powered posts with individual pages |
+| Contact | Email, LinkedIn, GitHub, location |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Adding a Blog Post
 
-## 🧞 Commands
+Create a new `.md` file in `src/content/blog/`:
 
-All commands are run from the root of the project, from a terminal:
+```md
+---
+title: "Your post title"
+category: "Architecture"
+readTime: "3 min read"
+summary: "A one-line summary for cards and meta."
+date: "2026-03-06"
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Your markdown content here.
+```
 
-## 👀 Want to learn more?
+It will automatically appear on the blog listing and get its own page at `/blog/{filename}`.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Commands
+
+| Command | Action |
+| :------ | :----- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build to `./dist/` |
+| `npm run preview` | Preview the build locally |
+
+## Design Principles
+
+- Warm neutral palette with a single accent color
+- Serif headings (Playfair Display) paired with sans-serif body (DM Sans)
+- Subtle hover effects and fade-in animations
+- Light/dark mode with system preference detection
+- Responsive with mobile-first approach
