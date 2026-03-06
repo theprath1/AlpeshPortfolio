@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { experience } from '../data/siteData';
+---
+
+<BaseLayout title="Experience" description={`Professional experience across ${SITE.name}'s career in platform, cloud, and software engineering.`}>
+  <div class="page">
+
+    <section class="page-intro reveal">
+      <span class="eyebrow">Experience</span>
+      <h1 class="page-title">Two decades across product, consulting, and enterprise teams.</h1>
+      <p class="page-summary">
+        The titles vary, but the pattern is consistent: own important systems, improve technical judgment, and help teams ship with less operational drag.
+      </p>
+    </section>
+
+    <section class="section reveal delay-1">
+      <div class="section-heading">
+        <h2>Career Trajectory</h2>
+      </div>
+
+      <div class="timeline-alt">
+        {experience.map((role) => (
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <span class="tl-type-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                  Work
+                </span>
+                <span class="tl-period">{role.period}</span>
+              </div>
+
+              <h3 class="tl-title">{role.role}</h3>
+              <span class="tl-company">{role.company}</span>
+
+              {role.location && (
+                <p class="tl-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {role.location}
+                </p>
+              )}
+
+              {role.items.length > 0 ? (
+                <ul class="tl-items">
+                  {role.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p class="tl-fallback">
+                  Senior engineering and consulting work across enterprise systems, delivery ownership, and cross-functional collaboration.
+                </p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

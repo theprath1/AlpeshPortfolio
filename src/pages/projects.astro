@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { projects } from '../data/siteData';
+---
+
+<BaseLayout title="Projects" description={`Selected projects and platform work by ${SITE.name}.`}>
+  <div class="page">
+
+    <section class="page-intro reveal">
+      <span class="eyebrow">Projects</span>
+      <h1 class="page-title">Platform work shaped around scale and reliability.</h1>
+      <p class="page-summary">
+        Representative examples of the systems I've designed, delivered, or helped evolve across data, cloud, and enterprise environments.
+      </p>
+    </section>
+
+    <section class="section reveal delay-1">
+      <div class="cards-grid">
+        {projects.map((project) => (
+          <article class="section-card feature-card">
+            <p class="card-kicker">{project.category}</p>
+            <h2>{project.title}</h2>
+            <p>{project.description}</p>
+            <div class="tag-row">
+              {project.tech.map((tech) => (
+                <span class="chip">{tech}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

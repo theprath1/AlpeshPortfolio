@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { getCollection } from 'astro:content';
+import {
+  focusAreas,
+  homeHighlights,
+  homeStats,
+  projects,
+} from '../data/siteData';
+
+const featuredProjects = projects.slice(0, 4);
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+const featuredPosts = allPosts.slice(0, 3);
+---
+
+<BaseLayout title="Home" description={`${SITE.name} builds data platforms, cloud systems, and engineering teams that scale.`}>
+  <div class="page">
+
+    <!-- About Me (top) -->
+    <section class="section reveal">
+      <div class="intro-block">
+        <h2>About Me</h2>
+        <p>
+          Hey there! I'm {SITE.name}, a technologist based in {SITE.location}. Over the past 20+ years I've worked across
+          data platforms, middleware, cloud-native systems, and engineering leadership at companies like Amazon, American Express,
+          and Credit Suisse. I care about building things that stay reliable as they grow, and helping teams make
+          stronger technical decisions. When I'm not deep in architecture or code, you'll find me mentoring engineers
+          and thinking about how to make complex systems simpler to operate.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero-layout reveal delay-1">
+      <article class="hero-panel hero-copy">
+        <span class="eyebrow">{SITE.location}</span>
+        <h1 class="hero-title">Data platforms, cloud systems, and teams that scale.</h1>
+        <p class="hero-summary">
+          {SITE.summary} With more than two decades across distributed systems, enterprise integration,
+          and modern cloud delivery, I focus on building technology that remains dependable as it grows.
+        </p>
+        <div class="hero-actions">
+          <a href="/projects" class="button-primary">View Projects</a>
+          <a href="/contact" class="button-secondary">Get in Touch</a>
+        </div>
+      </article>
+
+      <aside class="hero-side reveal delay-2">
+        <section class="info-card">
+          <p class="mono-label">Current focus</p>
+          <ul class="bullet-list">
+            {focusAreas.map((area) => (
+              <li>
+                <strong class="block mb-1 text-[var(--text)]">{area.title}</strong>
+                <span>{area.description}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </aside>
+    </section>
+
+    <!-- Stats -->
+    <section class="section reveal delay-2">
+      <div class="section-heading">
+        <h2>At a glance</h2>
+      </div>
+      <div class="stats-grid">
+        {homeStats.map((stat) => (
+          <article class="section-card metric-card">
+            <p class="metric-value">{stat.value}</p>
+            <p class="metric-label">{stat.label}</p>
+            <p class="metric-detail">{stat.detail}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="section reveal delay-2">
+      <div class="section-heading">
+        <h2>How I contribute</h2>
+        <p>The role shifts by team, but the through-line is consistent: clearer systems, stronger execution, and better technical judgment.</p>
+      </div>
+      <div class="cards-grid">
+        {homeHighlights.map((item) => (
+          <article class="section-card feature-card">
+            <p class="card-kicker">{item.title}</p>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section reveal delay-2">
+      <div class="section-heading">
+        <h2>Selected work</h2>
+        <p>Representative examples from data infrastructure, cloud architecture, and platform engineering.</p>
+      </div>
+      <div class="cards-grid">
+        {featuredProjects.map((project) => (
+          <article class="section-card feature-card">
+            <div>
+              <p class="card-kicker">{project.category}</p>
+              <h3>{project.title}</h3>
+            </div>
+            <p>{project.description}</p>
+            <div class="tag-row">
+              {project.tech.map((tech) => (
+                <span class="chip">{tech}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section reveal delay-3">
+      <div class="section-heading">
+        <h2>From the blog</h2>
+        <p>Concise notes on architecture, cloud tradeoffs, and leadership habits that scale.</p>
+      </div>
+      <div class="blog-grid">
+        {featuredPosts.map((post) => (
+          <article class="blog-card">
+            <div class="blog-meta">
+              <span class="chip">{post.data.category}</span>
+              <span class="chip">{post.data.readTime}</span>
+            </div>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.summary}</p>
+            <a href={`/blog/${post.id}`} class="blog-link">Read post &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section reveal delay-3">
+      <article class="cta-card">
+        <p class="card-kicker">Next step</p>
+        <h2>Need help with platform architecture or technical leadership?</h2>
+        <p>
+          If the work involves large-scale data systems, cloud modernization, or raising engineering execution,
+          that is the lane I operate in.
+        </p>
+        <div class="inline-actions">
+          <a href="/contact" class="button-primary">Get in touch</a>
+          <a href="/experience" class="button-secondary">See Experience</a>
+        </div>
+      </article>
+    </section>
+
+  </div>
+</BaseLayout>

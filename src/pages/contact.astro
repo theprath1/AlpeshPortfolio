@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { contactTopics } from '../data/siteData';
+---
+
+<BaseLayout title="Contact" description={`Contact ${SITE.name} for platform architecture, cloud, or engineering leadership conversations.`}>
+  <div class="page">
+
+    <section class="page-intro reveal">
+      <span class="eyebrow">Contact</span>
+      <h1 class="page-title">Let's talk about systems that matter.</h1>
+      <p class="page-summary">
+        I'm best suited for conversations around data platform architecture, cloud modernization, technical leadership, and engineering delivery.
+      </p>
+    </section>
+
+    <section class="contact-grid reveal delay-1">
+      <article class="cta-card">
+        <p class="card-kicker">Primary contact</p>
+        <h2>Email is the fastest path.</h2>
+        <p>
+          If you have a project, a role, or a technical problem that needs a senior systems perspective,
+          send a note with enough context to understand the scope.
+        </p>
+        <a href={`mailto:${SITE.email}`} class="contact-link">{SITE.email}</a>
+
+        <p class="mono-label">Useful topics</p>
+        <div class="tag-row">
+          {contactTopics.map((topic) => (
+            <span class="chip">{topic}</span>
+          ))}
+        </div>
+
+        <div class="inline-actions">
+          <a href={`mailto:${SITE.email}`} class="button-primary">Send Email</a>
+          <a href={SITE.resumePath} target="_blank" rel="noopener noreferrer" class="button-secondary">Open Resume</a>
+        </div>
+      </article>
+
+      <div class="hero-side">
+        <article class="contact-card">
+          <p class="card-kicker">LinkedIn</p>
+          <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" class="contact-link">View Profile &rarr;</a>
+          <p class="fine-print">A good place for a quick introduction, role context, or collaboration note.</p>
+        </article>
+
+        <article class="contact-card">
+          <p class="card-kicker">GitHub</p>
+          <a href={SITE.github} target="_blank" rel="noopener noreferrer" class="contact-link">See Repositories &rarr;</a>
+          <p class="fine-print">Useful if you want to review public work, technical interests, or implementation style.</p>
+        </article>
+
+        <article class="contact-card">
+          <p class="card-kicker">Location</p>
+          <h2>{SITE.location}</h2>
+          <p class="fine-print">Open to conversations that benefit from strong technical judgment and clear delivery ownership.</p>
+        </article>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

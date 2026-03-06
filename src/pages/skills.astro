@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { skillCategories } from '../data/siteData';
+---
+
+<BaseLayout title="Skills" description={`Skills, technologies, and domains covered by ${SITE.name}.`}>
+  <div class="page">
+
+    <section class="page-intro reveal">
+      <span class="eyebrow">Skills</span>
+      <h1 class="page-title">A broad stack with a clear center of gravity.</h1>
+      <p class="page-summary">
+        Most of my strongest work sits at the intersection of data engineering, cloud architecture, enterprise integration, and team execution.
+      </p>
+    </section>
+
+    <section class="section reveal delay-1">
+      <div class="skills-grid">
+        {skillCategories.map((category) => (
+          <article class="skill-card">
+            <p class="card-kicker">{category.name}</p>
+            <div class="tag-row">
+              {category.items.map((item) => (
+                <span class="chip">{item}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

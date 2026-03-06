@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title="Blog" description="Short notes on platform architecture, cloud tradeoffs, and engineering leadership.">
+  <div class="page">
+
+    <section class="page-intro reveal">
+      <span class="eyebrow">Blog</span>
+      <h1 class="page-title">Short notes on systems, cloud, and leadership.</h1>
+      <p class="page-summary">
+        Concise writing on platform architecture, cloud decisions, and how strong engineering standards actually get applied.
+      </p>
+    </section>
+
+    <!-- Intro + Writing lanes -->
+    <section class="split-layout reveal delay-1">
+      <article class="hero-panel prose-note">
+        <p class="mono-label">Why this section exists</p>
+        <p>
+          A portfolio should show more than a title history. It should also show how someone thinks. This blog section makes room for the reasoning behind architecture decisions, delivery standards, and platform choices.
+        </p>
+        <p>
+          The format stays short on purpose. These notes are designed to be practical and readable, not long-form thought pieces that bury the useful part.
+        </p>
+      </article>
+
+      <aside class="hero-side">
+        <section class="info-card">
+          <p class="mono-label">Writing lanes</p>
+          <ul class="bullet-list">
+            <li><strong class="block mb-1 text-[var(--text)]">Platform design</strong><span>What keeps systems understandable after they scale.</span></li>
+            <li><strong class="block mb-1 text-[var(--text)]">Cloud decisions</strong><span>Tradeoffs that lower operational burden instead of increasing it.</span></li>
+            <li><strong class="block mb-1 text-[var(--text)]">Engineering leadership</strong><span>How standards, reviews, and mentorship improve delivery quality.</span></li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+
+    <!-- All posts -->
+    <section class="section reveal delay-2">
+      <div class="section-heading">
+        <h2>All posts</h2>
+      </div>
+
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <article class="blog-card">
+            <div class="blog-meta">
+              <span class="chip">{post.data.category}</span>
+              <span class="chip">{post.data.readTime}</span>
+            </div>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.summary}</p>
+            <a href={`/blog/${post.id}`} class="blog-link">Read post &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import { credentials, principles, strengths } from '../data/siteData';
+---
+
+<BaseLayout title="About" description={`About ${SITE.name}, a technologist focused on scalable data and cloud systems.`}>
+  <div class="page">
+
+    <section class="page-intro reveal">
+      <span class="eyebrow">About</span>
+      <h1 class="page-title">A long-track engineer with a systems view.</h1>
+      <p class="page-summary">
+        I've spent more than 20 years building software across data platforms, middleware, cloud systems, and technical leadership roles.
+        The common theme is building things that can keep working when complexity increases.
+      </p>
+    </section>
+
+    <!-- Profile + Snapshot side by side -->
+    <section class="split-layout reveal delay-1">
+      <article class="hero-panel prose-note">
+        <p class="mono-label">Profile</p>
+        <p>
+          My background spans enterprise integration, Hadoop ecosystems, large-scale data processing, and cloud-native delivery on AWS and Kubernetes.
+          I'm most effective where architecture, reliability, and team execution need to improve at the same time.
+        </p>
+        <p>
+          I've worked across education, investment banking, storage, and broader enterprise environments, which has made me careful about tradeoffs.
+          Good systems are not just technically sound; they also need to fit the operating model of the team and the business.
+        </p>
+        <p>
+          That is why my approach tends to stay pragmatic. I care about durable decisions, strong ownership, and engineering habits that hold up under real delivery pressure.
+        </p>
+      </article>
+
+      <aside class="hero-side">
+        <section class="info-card">
+          <p class="mono-label">Snapshot</p>
+          <ul class="bullet-list">
+            <li><strong class="block mb-1 text-[var(--text)]">Primary strengths</strong><span>Data infrastructure, cloud architecture, and engineering leadership.</span></li>
+            <li><strong class="block mb-1 text-[var(--text)]">Preferred problems</strong><span>Ambiguous systems work that needs both technical clarity and delivery discipline.</span></li>
+            <li><strong class="block mb-1 text-[var(--text)]">Working style</strong><span>Direct, structured, and focused on decisions teams can actually sustain.</span></li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+
+    <!-- Credentials + Strengths -->
+    <section class="two-column-grid reveal delay-2">
+      <article class="section-card feature-card">
+        <div class="section-heading">
+          <h2>Credentials</h2>
+          <p>Formal education and certifications that support the practical work.</p>
+        </div>
+        <div class="timeline-stack">
+          {credentials.map((item) => (
+            <div class="info-card">
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <article class="section-card feature-card">
+        <div class="section-heading">
+          <h2>What I optimize for</h2>
+          <p>Patterns that show up consistently in the way I lead projects and work with teams.</p>
+        </div>
+        <ul class="check-list">
+          {strengths.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
+    </section>
+
+    <!-- Principles -->
+    <section class="section reveal delay-3">
+      <article class="cta-card">
+        <p class="card-kicker">Operating principles</p>
+        <h2>Standards are useful when they help teams move faster with fewer mistakes.</h2>
+        <ul class="takeaway-list">
+          {principles.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
+    </section>
+
+  </div>
+</BaseLayout>
