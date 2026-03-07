@@ -10,85 +10,84 @@ export const navigation = [
 
 export const homeStats = [
   {
-    value: "20+",
-    label: "Years in software",
-    detail: "Across data, middleware, cloud, and platform engineering.",
+    value: "15+",
+    label: "Years in data engineering",
+    detail: "Building and scaling cloud-native data platforms powering AI/ML, analytics, and products.",
   },
   {
-    value: "8",
-    label: "Companies",
-    detail: "From consulting and product teams to global enterprises.",
+    value: "8B+",
+    label: "Events/day processed",
+    detail: "Real-time Kafka/Flink pipelines at peak throughput.",
   },
   {
-    value: "3",
-    label: "AWS certifications",
-    detail: "Architecture, AI, and machine learning credentials.",
+    value: "26",
+    label: "Engineers led globally",
+    detail: "Multi-region teams across the US, India, and Israel.",
   },
   {
-    value: "3",
-    label: "Core pillars",
-    detail: "Data platforms, cloud systems, and technical leadership.",
+    value: "700K+",
+    label: "Concurrent IoT devices",
+    detail: "Streaming data at 1Hz on a secure, multi-tenant cloud platform.",
   },
 ] as const;
 
 export const focusAreas = [
   {
-    title: "Data platforms that stay practical",
+    title: "Petabyte-scale data platforms",
     description:
-      "I design systems that can handle scale without becoming fragile, opaque, or painful to operate.",
+      "Designing secure, multi-tenant platforms for streaming, analytics, AI/ML, and customer-facing data products.",
   },
   {
-    title: "Cloud architecture with operational clarity",
+    title: "Cloud-native & streaming architecture",
     description:
-      "AWS and Kubernetes decisions are most useful when they reduce complexity for the team running them every day.",
+      "Event-sourced ingestion, Kafka/Flink pipelines, and GDPR-compliant multi-region architectures on AWS.",
   },
   {
-    title: "Leadership grounded in delivery",
+    title: "Hands-on engineering leadership",
     description:
-      "Architecture, mentoring, and code quality only matter if they move teams toward reliable outcomes.",
+      "Building and mentoring global teams while staying deeply technical across cloud and streaming technologies.",
   },
 ] as const;
 
 export const homeHighlights = [
   {
-    title: "Platform architecture",
+    title: "End-to-end data strategy",
     description:
-      "From Hadoop-era data systems to modern cloud-native services, the focus stays the same: durability, throughput, and clean ownership boundaries.",
+      "Owning data platform strategy and execution for petabyte-scale systems, from ingestion through analytics and customer delivery.",
   },
   {
-    title: "Engineering leadership",
+    title: "Database architecture & modernization",
     description:
-      "I help teams make stronger technical decisions, raise quality bars, and keep delivery disciplined without slowing momentum.",
+      "Migrating enterprise systems from on-prem Hadoop, Greenplum, and SQL Server to AWS S3, Snowflake, and Redshift while reducing TCO.",
   },
   {
-    title: "Business alignment",
+    title: "AI & real-time data products",
     description:
-      "The best technical plans are understandable to stakeholders and measurable against product and operational goals.",
+      "Delivering AI-driven solutions with AWS Bedrock and enabling real-time data sharing via REST/GraphQL, Snowflake, and TinyBird.",
   },
 ] as const;
 
 export const principles = [
-  "Prefer systems that are observable, operable, and easy to reason about.",
-  "Use architecture to remove bottlenecks, not to add ceremony.",
-  "Set standards through execution, reviews, and mentorship.",
-  "Keep teams close to outcomes, not just outputs.",
+  "Build platforms that are observable, operable, and reliable at scale.",
+  "Use streaming-first architecture to reduce latency and increase delivery velocity.",
+  "Drive FinOps discipline to align architecture with budget constraints.",
+  "Stay hands-on while leading globally distributed teams toward measurable outcomes.",
 ] as const;
 
 export const credentials = [
   { title: "AWS Certified AI Practitioner", detail: "Certification" },
   { title: "AWS Certified Solutions Architect", detail: "Certification" },
   { title: "Machine Learning", detail: "Certification" },
-  { title: "MCA, Computer Application", detail: "Sardar Patel University, 2000 - 2003" },
-  { title: "BCS, Computer Science", detail: "VP & RPTP Science College, 1997 - 2000" },
+  { title: "ISO27001 Readiness", detail: "Security & Compliance" },
 ] as const;
 
 export const strengths = [
-  "Technical and thought leadership for architecture and delivery decisions",
-  "Mentoring engineers and raising the quality bar through direct feedback",
-  "Ownership of critical initiatives with proactive risk management",
-  "Communication that keeps stakeholders aligned on tradeoffs and outcomes",
-  "Deep hands-on experience with Big Data frameworks and distributed systems",
-  "Cloud-native engineering on AWS with an emphasis on reliability and scale",
+  "End-to-end data platform strategy and execution at petabyte scale",
+  "Database architecture across SQL Server, PostgreSQL, Snowflake, Redshift, and MongoDB",
+  "Real-time streaming systems with Kafka, Flink, and event-sourced architectures",
+  "Building and leading multi-region engineering teams (US, India, Israel)",
+  "GDPR-compliant, multi-region cloud architectures on AWS",
+  "FinOps-driven optimization balancing growth with budget constraints",
 ] as const;
 
 export const experience = [
@@ -172,65 +171,68 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Enterprise Hadoop Data Platform",
+    title: "Multi-Tenant IoT Data Platform",
     description:
-      "Implemented complete Hadoop solutions for acquisition, storage, transformation, analysis, and business intelligence using the broader Hadoop ecosystem.",
-    tech: ["Hadoop", "MapReduce", "HDFS", "HBase", "Hive", "Sqoop", "Flume"],
-    category: "Data Infrastructure",
+      "Scaled a secure, multi-tenant cloud data platform supporting 700K+ concurrent IoT devices streaming at 1Hz, powering analytics, AI/ML, and customer-facing data products.",
+    tech: ["Kafka", "Flink", "AWS S3", "Snowflake", "Redshift"],
+    category: "Data Platform",
   },
   {
-    title: "Cloud-Native Platform on AWS",
+    title: "Real-Time Streaming Pipelines",
     description:
-      "Architected and deployed scalable cloud-native applications using AWS services and Kubernetes for resilient, high-availability delivery.",
-    tech: ["AWS", "Kubernetes", "Python", "Docker", "CI/CD"],
-    category: "Cloud Architecture",
+      "Designed Kafka/Flink pipelines processing 8B+ events/day at peak with in-stream enrichment, reducing device-to-consumer latency by 75% to under 60 seconds.",
+    tech: ["Kafka", "Flink", "Spark Streaming", "Kinesis"],
+    category: "Streaming Architecture",
   },
   {
-    title: "Scalable Software Systems at Amazon",
+    title: "Enterprise Systems Modernization",
     description:
-      "Designed, built, and operated scalable software systems end to end, with strong focus on maintainability, ambiguity handling, and operational excellence.",
-    tech: ["Java", "AWS", "Distributed Systems", "Monitoring"],
-    category: "Platform Engineering",
+      "Led migration from on-prem Hadoop, Greenplum, and SQL Server to AWS S3 and Snowflake/Redshift, reducing platform TCO while increasing delivery velocity.",
+    tech: ["SQL Server", "Snowflake", "Redshift", "AWS S3", "Iceberg"],
+    category: "Cloud Migration",
   },
   {
-    title: "Oracle SOA & Middleware Solutions",
+    title: "GDPR-Compliant Multi-Region Architecture",
     description:
-      "Built enterprise integration solutions connecting disparate systems for reliable data flow across business-critical environments.",
-    tech: ["Oracle SOA", "Middleware", "Integration"],
-    category: "Enterprise Integration",
+      "Designed multi-region data architecture isolating EU data ingestion and storage in AWS eu-west-2 while maintaining US platforms, meeting residency requirements.",
+    tech: ["AWS", "Kafka", "S3", "GDPR", "Multi-Region"],
+    category: "Compliance & Security",
   },
   {
-    title: "Data Mining & Analytics Platform",
+    title: "AI-Driven Coaching Assistant",
     description:
-      "Developed large-scale querying and data mining workflows to help teams extract insights from complex datasets across multiple domains.",
-    tech: ["Hive", "Pig", "SQL", "Data Mining"],
-    category: "Analytics",
+      "Partnered with ML and Labs teams to deliver an AI-driven coaching assistant leveraging AWS Bedrock and proprietary data for intelligent insights.",
+    tech: ["AWS Bedrock", "Python", "ML Pipelines"],
+    category: "AI/ML",
   },
   {
-    title: "Investment Banking Data Systems",
+    title: "Real-Time Customer Data Sharing",
     description:
-      "Delivered technology solutions for financial workflows, supporting robust data processing and reporting in a high-stakes domain.",
-    tech: ["Java", "SQL", "Data Processing"],
-    category: "Financial Systems",
+      "Enabled real-time PUSH deliveries via REST/GraphQL, SFTP, Snowflake/Redshift data shares, and TinyBird (ClickHouse) APIs for near-real-time customer analytics.",
+    tech: ["REST", "GraphQL", "TinyBird", "ClickHouse", "Snowflake"],
+    category: "Data Products",
   },
 ] as const;
 
 export const skillCategories = [
-  { name: "Languages", items: ["Python", "Java", "SQL"] },
-  { name: "Big Data & Hadoop", items: ["Hadoop", "MapReduce", "HDFS", "HBase", "Hive", "Pig", "Sqoop", "Flume"] },
-  { name: "Cloud & Infrastructure", items: ["Amazon Web Services (AWS)", "Kubernetes", "Docker", "CI/CD"] },
-  { name: "Data & Analytics", items: ["Data Mining", "Data Querying", "ETL", "Business Intelligence", "Data Transformation"] },
-  { name: "Middleware & SOA", items: ["Oracle SOA Platform", "Middleware Technologies", "Enterprise Integration"] },
-  { name: "Machine Learning", items: ["AWS AI Services", "ML Pipelines", "Feature Engineering"] },
-  { name: "Certifications", items: ["AWS Certified AI Practitioner", "AWS Certified Solutions Architect", "Machine Learning"] },
-  { name: "Domain Expertise", items: ["Investment Banking", "Storage", "Education", "Financial Services"] },
-  { name: "Methodology", items: ["SDLC", "Scrum", "Agile"] },
-  { name: "Languages (Spoken)", items: ["English", "Japanese"] },
+  { name: "Languages & Frameworks", items: ["Python", "Java (Spring Boot)", "Node.js", "SQL"] },
+  { name: "Streaming & Messaging", items: ["Kafka", "Flink", "Spark Streaming", "Kinesis", "RabbitMQ"] },
+  { name: "Data Storage & Formats", items: ["Parquet", "Avro", "Hadoop/HDFS", "Amazon S3", "Apache Iceberg"] },
+  { name: "Analytics Databases", items: ["Snowflake", "Redshift", "ClickHouse"] },
+  { name: "Relational Databases", items: ["SQL Server", "Oracle", "MySQL", "AWS RDS", "AWS Aurora PostgreSQL"] },
+  { name: "NoSQL & Graph", items: ["MongoDB/Atlas", "DynamoDB", "AWS DocumentDB", "HBase", "Neo4j", "AWS Neptune"] },
+  { name: "ML/AI", items: ["AWS Bedrock", "Feature Engineering Pipelines"] },
+  { name: "Orchestration", items: ["Apache Airflow", "AWS Managed Airflow", "AWS Step Functions"] },
+  { name: "Observability & Alerting", items: ["AWS CloudWatch", "SNS", "PagerDuty", "Slack Notifications"] },
+  { name: "CI/CD & SCM", items: ["Git", "GitHub Actions", "Liquibase", "Jenkins", "Bitbucket"] },
+  { name: "Cloud & Infrastructure", items: ["Terraform / Terragrunt", "AWS CloudFormation", "EKS", "EC2"] },
+  { name: "Methodology", items: ["SAFe", "Scrum", "Kanban"] },
 ] as const;
 
 export const contactTopics = [
-  "Data platform architecture",
-  "Cloud modernization on AWS",
-  "Engineering leadership and mentoring",
-  "Distributed systems and platform delivery",
+  "Data platform architecture & strategy",
+  "Database architecture & modernization",
+  "Cloud-native streaming systems",
+  "Engineering leadership & global team building",
+  "AI/ML data infrastructure",
 ] as const;
